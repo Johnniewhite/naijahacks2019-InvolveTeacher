@@ -8,7 +8,6 @@
 - Ridwanullah Ibrahim Adagiri, ibrahimridwan47@gmail.com
 - Adeyinka Inioluwa John, boluwatifeeri@gmail.com
 
-
 # Problem
 
  The current poor quality of teacher education, along with the lack of teacher autonomy, 
@@ -30,3 +29,5 @@ PHP, ReactJs, Redux, MSYQL and AWS
 - Effective Collaboration between teachers by sharing lesson notes
 - Go Paperless
 
+# Top-level directory layout
+    └── README.md   
