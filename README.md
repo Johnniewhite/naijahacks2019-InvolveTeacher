@@ -7,6 +7,7 @@
 - Idowu Olaide Ridwan, idowuolaideridwan@gmail.com, Backend Developer
 - Ridwanullah Ibrahim Adagiri, ibrahimridwan47@gmail.com, Front End Developer
 - Adeyinka Inioluwa John, boluwatifeeri@gmail.com , Front End Developer
+- Ndane Ndazhaga, ndazhagan@gmail.com , Data Analyst
 
 # Problem
 
@@ -31,3 +32,4 @@ PHP, ReactJs, Redux, MYSQL and AWS
 
 # Top-level directory layout
     └── README.md   
+
