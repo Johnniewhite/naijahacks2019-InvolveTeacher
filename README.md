@@ -1,17 +1,12 @@
 # NaijaHacks Hackathon 2019
 
-# Team Codemade 
-
-There is need to do a redesign of a new curriculum. However, to make this worth the energy, Teachers need to be equipped with relevant skills to deliver based on the needs of the future which are unpredictable too. It begins with learning to learn and adapt to changes
-
-## InvolveTeacher
+## Team Codemade
 
 ### Team Members
 
 - Idowu Olaide Ridwan, idowuolaideridwan@gmail.com
 - Ridwanullah Ibrahim Adagiri, ibrahimridwan47@gmail.com
 - Adeyinka Inioluwa John, boluwatifeeri@gmail.com
-
 
 # Problem
 
@@ -33,4 +28,3 @@ PHP, ReactJs, Redux, MSYQL and AWS
 - To inprove teachers' digital literacy 
 - Effective Collaboration between teachers by sharing lesson notes
 - Go Paperless
-
