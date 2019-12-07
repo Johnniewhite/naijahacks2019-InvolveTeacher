@@ -28,3 +28,7 @@ PHP, ReactJs, Redux, MSYQL and AWS
 - To inprove teachers' digital literacy 
 - Effective Collaboration between teachers by sharing lesson notes
 - Go Paperless
+
+# Top-level directory layout
+    └── README.md   
+
