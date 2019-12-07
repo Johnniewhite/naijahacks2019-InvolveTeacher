@@ -21,7 +21,7 @@ and administrators — working together on how to teach kids.
 
 # Proposed Stack
 
-PHP, ReactJs, Redux, MSYQL and AWS
+PHP, ReactJs, Redux, MYSQL and AWS
 
 # Benefit
 
