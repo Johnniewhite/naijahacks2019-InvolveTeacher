@@ -4,9 +4,9 @@
 
 ### Team Members
 
-- Idowu Olaide Ridwan, idowuolaideridwan@gmail.com
-- Ridwanullah Ibrahim Adagiri, ibrahimridwan47@gmail.com
-- Adeyinka Inioluwa John, boluwatifeeri@gmail.com
+- Idowu Olaide Ridwan, idowuolaideridwan@gmail.com, Backend Developer
+- Ridwanullah Ibrahim Adagiri, ibrahimridwan47@gmail.com, Front End Developer
+- Adeyinka Inioluwa John, boluwatifeeri@gmail.com , Front End Developer
 
 # Problem
 
