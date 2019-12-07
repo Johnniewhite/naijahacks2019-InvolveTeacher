@@ -12,7 +12,7 @@
 
  The current poor quality of teacher education, along with the lack of teacher autonomy, 
  and a standardised one-size-fits-all approach, has resulted in a crisis in teaching 
- as a profession and in the quality of learning in most Nigerian schools
+ as a profession and in the quality of learning in most Nigerian schools.
 
 # Proposed Solution
 
@@ -25,8 +25,8 @@ PHP, ReactJs, Redux, MYSQL and AWS
 
 # Benefit
 
-- To inprove teachers' digital literacy 
-- Effective Collaboration between teachers by sharing lesson notes
+- To improve teachers' digital literacy 
+- Effective Collaboration between teachers by sharing lesson notes.
 - Go Paperless
 
 # Top-level directory layout
