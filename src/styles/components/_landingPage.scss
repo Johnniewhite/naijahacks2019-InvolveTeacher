@@ -1,0 +1,93 @@
+.landing-page {
+  display: flex;
+  justify-content: space-evenly;
+  height: 100vh;
+  width: 100vw;
+  
+  h1 {
+    font-size: $xl-size;
+    color: $grey;
+  }
+
+  h2 {
+    font-size: $l-size;
+    line-height: 1.8;
+  }
+
+}
+
+.landingpage-leftflex {
+  width: 50%;
+  margin: 0 $xl-size;
+  padding: $xl-size;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  z-index: 2;
+
+  .landingpage-buttons {
+    display: flex;
+    justify-content: left;
+  }
+
+
+}
+
+.logo {
+  color: $blue;
+
+  span {
+    color: $reddie ;
+  }
+}
+
+.landingpage-rightflex {
+  background: url("/public/images/education.jpg");
+   width: 50%;
+   height: 100vh;
+   background-size: cover;
+
+   .landingpage-overlay {
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 255, 0.473);
+    opacity: 0.3;
+  }
+  }
+
+.landing-page__description {
+  color: $grey;
+  font-style: italic;
+  font-weight: 500;
+}
+
+
+@media (max-width: $breakpoint) {
+  .landing-page {
+   display: block;
+    height: 100vh;
+    justify-content: center;
+    overflow-x: hidden;
+
+    h2 {
+      font-size: 3rem;
+    }
+  }
+
+  .landingpage-leftflex {
+    width: 100%;
+    padding: $xl-size;
+    margin: 0;
+    height: 100vh;
+
+
+  }
+
+  .landingpage-rightflex {
+   display: none;
+  }
+
+}
