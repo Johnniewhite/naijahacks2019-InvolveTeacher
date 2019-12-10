@@ -15,6 +15,7 @@
  and a standardised one-size-fits-all approach, has resulted in a crisis in teaching 
  as a profession and in the quality of learning in most Nigerian schools.
 
+
 # Proposed Solution
 
 A digital tool app-based lesson planner and one-in-all tool that gets teachers — 
@@ -28,6 +29,7 @@ PHP, ReactJs, Redux, MYSQL and AWS
 
 - To improve teachers' digital literacy 
 - Effective Collaboration between teachers by sharing lesson notes.
+
 - Go Paperless
 
 # Top-level directory layout
