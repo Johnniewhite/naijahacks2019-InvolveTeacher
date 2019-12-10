@@ -1,0 +1,130 @@
+.register-page {
+    margin: $l-size auto;
+    height: 100vh;
+    text-align: center;
+
+    .logo {
+        font-size: 5rem;
+        position: relative;
+        bottom: 2rem;
+       }
+
+    h1 {
+        font-size: 2.2rem;
+        font-weight: 500;
+    }
+
+
+
+    form {
+        display: flex;
+        flex-direction: column;
+        width: 40%;
+        height: 70%;
+        margin: 0 auto;
+        padding: $l-size;
+        padding-bottom: $l-size;
+        justify-content: space-between;
+
+        .inputDivs {
+            width: 100%;
+        }
+
+        .icons {
+            font-size: 3rem;
+           color: $blue;
+           position: relative;
+           left: 3rem;
+        }
+
+    }
+
+    form input {
+        font-size: 2rem;
+        outline: none;
+        height: $xl-size;
+        padding: $s-size;
+        padding-left: $xl-size;
+        border: none;
+        border-bottom: 1px solid $blue;
+        width: 80%;
+    }
+
+    .button {
+        width: 80%;
+        margin: 0 auto;
+        margin-left: 6rem;
+        text-align: center;
+    }
+    
+    
+}
+
+.signup-base {
+    position: relative;
+    bottom: 2rem;
+    width: 30%;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin-bottom: 3rem;
+
+
+    .signup-base__buttons {
+        display: flex;
+        margin-top: 1rem;
+        width: 90%;
+        justify-content: space-between;
+        
+    }
+
+    .signup-base__button {
+        margin-bottom: 1rem;
+        background-color: white;
+        border: solid 1px $blue;
+        color: $grey;
+        width: 80%;
+    }
+
+    .signup-base__button:hover {
+        background-color: $blue;
+
+    }
+
+    h2 {
+        text-align: left;
+        margin-left: 6rem;
+    }
+}
+
+
+  
+  .signup-button:hover {
+    color: $grey;
+    transition: 0.3s ease-in-out;
+    background-color: $reddie;
+    text-decoration: none;
+  }
+ 
+
+  @media (max-width: $breakpoint) {
+      .register-page {
+          form {
+              width: 70%;
+          }
+      }
+  }
+
+  @media (max-width: $desktop-breakpoint) {
+    .register-page {
+        form {
+            width: 85%;
+        }
+    }
+
+    .signup-base {
+        position: relative;
+        right: 8rem;
+    }
+}
