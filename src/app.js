@@ -10,10 +10,10 @@ import "./styles/styles.scss";
 
 //serviceWorkers
 
-if ("serviceWorker" in navigator) {
+if (navigator.serviceWorker) {
   window.addEventListener("load", () => {
     navigator.serviceWorker
-      .register("serviceWorker.js")
+      .register("../public/serviceWorker.js")
       .then(reg => console.log("Service Workers"))
       .catch(err => console.log(`Service Worker: Error: ${err}`));
   });
