@@ -14,7 +14,7 @@
     "build:prod": "webpack -p --env production",
     "serve": "webpack-dev-server --open",
     "start": "node server/server.js",
-    "heroku-postbuild": "npm run build:prod"
+    "heroku-postbuild": "yarn run build:prod"
   },
   "dependencies": {
     "@babel/core": "^7.7.4",
