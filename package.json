@@ -5,6 +5,9 @@
   "repository": "git@github.com:idowuolaideridwan/InvolveTeacher.git",
   "author": "Ridhwan Adagiri <ibrahimridwan47@gmail.com>",
   "license": "MIT",
+  "engines": {
+    "node": "13.0.1"
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build:dev": "webpack",
