@@ -1,10 +1,10 @@
 import React from 'react'
 import { BrowserRouter, Switch, Route } from 'react-router-dom';
-import Dashboard from '../components/Dashboard';
-import ErrorPage from '../components/ErrorPage';
-import LandingPage from '../components/LandingPage';
-import LoginPage from '../components/LoginPage';
-import SignupPage from '../components/SignupPage';
+import Dashboard from './components/Dashboard';
+import ErrorPage from './components/ErrorPage';
+import LandingPage from './components/LandingPage';
+import LoginPage from './components/LoginPage';
+import SignupPage from './components/SignupPage';
 
 const MainRouter = () => (
     <BrowserRouter>
@@ -21,4 +21,3 @@ const MainRouter = () => (
 );
 
 export default MainRouter
-
