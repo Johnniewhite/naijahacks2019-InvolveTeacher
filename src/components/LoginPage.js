@@ -1,6 +1,6 @@
 import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faEnvelope, faUnlockAlt } from '@fortawesome/free-solid-svg-icons'
+import { faEnvelope, faUnlockAlt, faSignInAlt } from '@fortawesome/free-solid-svg-icons'
 
 
 export default class LoginPage extends React.Component {
@@ -30,7 +30,10 @@ export default class LoginPage extends React.Component {
      <FontAwesomeIcon className="icons" icon={faUnlockAlt} />
      <input type="password" name="email" placeholder="Password" />
      </div>
-     <input className="button signup-button" type="submit" value="Login" />
+     <div>
+     <button className="button  signup-button">Login</button>
+     <FontAwesomeIcon className="icons" icon={faUnlockAlt} />
+     </div>
      </form>
      </div>
     );
