@@ -1,5 +1,6 @@
 import React from 'react'
 import { BrowserRouter, Switch, Route } from 'react-router-dom';
+import CoursesListPage from "./components/CoursesListPage";
 import Dashboard from './components/Dashboard';
 import ErrorPage from './components/ErrorPage';
 import LandingPage from './components/LandingPage';
@@ -14,6 +15,7 @@ const MainRouter = () => (
     <Route path="/dashboard" component={ Dashboard }/>
     <Route path="/signup" component={ SignupPage } />
     <Route path="/login" component={ LoginPage } />
+    <Route path="/courses" component={ CoursesListPage } />
     <Route component={ ErrorPage } />
     </Switch>
     </div>
