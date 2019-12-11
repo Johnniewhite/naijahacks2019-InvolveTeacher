@@ -1,7 +1,9 @@
 .register-page {
     margin: $l-size auto;
     height: 100vh;
+    width: 100vw;
     text-align: center;
+    z-index: 4;
 
     .logo {
         font-size: 5rem;
@@ -20,11 +22,14 @@
         display: flex;
         flex-direction: column;
         width: 40%;
-        height: 70%;
         margin: 0 auto;
-        padding: $l-size;
+        padding: 0 $l-size;
         padding-bottom: $l-size;
         justify-content: space-between;
+        z-index: 2;
+        position: relative;
+        bottom: 2rem;
+        margin-top: 4rem;
 
         .inputDivs {
             width: 100%;
@@ -42,12 +47,14 @@
     form input {
         font-size: 2rem;
         outline: none;
-        height: $xl-size;
+        height: 4rem;
         padding: $s-size;
         padding-left: $xl-size;
         border: none;
         border-bottom: 1px solid $blue;
         width: 80%;
+        margin-bottom: 4rem;
+        
     }
 
     .button {
@@ -106,6 +113,10 @@
     background-color: $reddie;
     text-decoration: none;
   }
+
+.login {
+    margin-top: 8rem;
+}
  
 
   @media (max-width: $breakpoint) {

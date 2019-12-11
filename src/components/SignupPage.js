@@ -19,10 +19,11 @@ export default class SignupPage extends React.Component {
   render () {
 
     return (
+      
      <div className="register-page">
      <h1 className="logo">Involve <span>Teacher</span></h1>
-     <form onSubmit={this.submitForm}>
      <h1>REGISTER AS A TEACHER</h1>
+     <form onSubmit={this.submitForm}>
      <div className="inputDivs">
      <FontAwesomeIcon className="icons" icon={faUserAlt} />
      <input type="text" name="name" placeholder="Name" />
@@ -37,7 +38,7 @@ export default class SignupPage extends React.Component {
      <FontAwesomeIcon className="icons" icon={faLock} />
      <input type="password" name="password" placeholder="Password" />
      </div>
-     <input className="button signup-button" type="submit" value="Register" />
+     <button className="button  signup-button">Signup</button>
      </form>
       <div className="signup-base">
       <br />

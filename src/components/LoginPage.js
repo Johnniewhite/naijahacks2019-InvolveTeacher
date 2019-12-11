@@ -20,8 +20,8 @@ export default class LoginPage extends React.Component {
     return (
      <div className="register-page">
      <h1 className="logo">Involve <span>Teacher</span></h1>
-     <form onSubmit={this.submitForm}>
-     <div className="inputDivs">
+     <form  onSubmit={this.submitForm}>
+     <div className="inputDivs login">
      <FontAwesomeIcon className="icons" icon={faEnvelope} />
      <input type="email" name="email" placeholder="Email Address" />
      </div>
@@ -30,10 +30,7 @@ export default class LoginPage extends React.Component {
      <FontAwesomeIcon className="icons" icon={faUnlockAlt} />
      <input type="password" name="email" placeholder="Password" />
      </div>
-     <div>
      <button className="button  signup-button">Login</button>
-     <FontAwesomeIcon className="icons" icon={faUnlockAlt} />
-     </div>
      </form>
      </div>
     );
