@@ -1,14 +1,13 @@
 .register-page {
-    margin: $l-size auto;
+    margin:0 auto;
     height: 100vh;
     width: 100vw;
     text-align: center;
-    z-index: 4;
+
 
     .logo {
         font-size: 5rem;
-        position: relative;
-        bottom: 2rem;
+       
        }
 
     h1 {
@@ -26,10 +25,7 @@
         padding: 0 $l-size;
         padding-bottom: $l-size;
         justify-content: space-between;
-        z-index: 2;
-        position: relative;
-        bottom: 2rem;
-        margin-top: 4rem;
+        margin-top: 9rem;
 
         .inputDivs {
             width: 100%;
@@ -134,8 +130,4 @@
         }
     }
 
-    .signup-base {
-        position: relative;
-        right: 8rem;
-    }
 }

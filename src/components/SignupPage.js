@@ -1,7 +1,7 @@
 import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faEnvelope, faLock, faUserAlt } from '@fortawesome/free-solid-svg-icons';
-import { Link } from "react-router-dom";
+import axios from 'axios';
 
 
 export default class SignupPage extends React.Component {
@@ -10,10 +10,42 @@ export default class SignupPage extends React.Component {
       super(props)
 
       this.submitForm = this.submitForm.bind(this);
+      this.emailChange = this.emailChange.bind(this);
+      this.nameChange = this.nameChange.bind(this);
+      this.passwordChange = this.passwordChange.bind(this);
+
+      this.state = {
+        email: '',
+        password: "",
+        name: ""
+      }
   }
 
   submitForm (e) {
-    e.preventDefault()
+    // const response = await axios.post(
+    //   'https://api.involveteacher.space/public/api/register',
+    //   { example: 'data' },
+    //   { headers: { 'Content-Type': 'application/json' } }
+    // )
+    // console.log(response.data)
+  }
+
+  nameChange (e) {
+    const name = e.target.value;
+    this.setState(()=> ({name}));
+    console.log(this.state.name)
+  }
+
+  emailChange (e) {
+    const email = e.target.value;
+    this.setState(()=> ({email}));
+    console.log(this.state.email)
+  }
+
+  passwordChange (e) {
+    const password = e.target.value;
+    this.setState(()=> ({password}));
+    console.log(this.state.password)
   }
 
   render () {
@@ -26,28 +58,23 @@ export default class SignupPage extends React.Component {
      <form onSubmit={this.submitForm}>
      <div className="inputDivs">
      <FontAwesomeIcon className="icons" icon={faUserAlt} />
-     <input type="text" name="name" placeholder="Name" />
+     <input type="text" name="name" placeholder="Name" onChange={this.nameChange}/>
      </div>
      
      <div className="inputDivs">
      <FontAwesomeIcon className="icons" icon={faEnvelope} />
-     <input type="email" name="email" placeholder="Email Address" />
+     <input type="email" name="email" placeholder="Email Address" onChange={this.emailChange}/>
      </div>
 
      <div className="inputDivs">
      <FontAwesomeIcon className="icons" icon={faLock} />
-     <input type="password" name="password" placeholder="Password" />
+     <input type="password" name="password" placeholder="Password" onChange={this.passwordChange} />
      </div>
      <button className="button  signup-button">Signup</button>
      </form>
       <div className="signup-base">
       <br />
-        <h3>OR</h3>
-        <h2>Log in with:</h2>
-        <div className="signup-base__buttons">
-        <Link className="button button__landingpage signup-base__button" to="/">Google</Link>
-        <Link className="button button__landingpage signup-base__button" to="/login">Facebook</Link>
-        </div>
+       
       </div>
      </div>
     );

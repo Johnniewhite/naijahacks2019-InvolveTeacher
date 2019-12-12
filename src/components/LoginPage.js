@@ -9,6 +9,10 @@ export default class LoginPage extends React.Component {
       super(props)
 
       this.submitForm = this.submitForm.bind(this);
+
+      this.state = {
+
+      }
   }
 
   submitForm (e) {
@@ -21,7 +25,7 @@ export default class LoginPage extends React.Component {
      <div className="register-page">
      <h1 className="logo">Involve <span>Teacher</span></h1>
      <form  onSubmit={this.submitForm}>
-     <div className="inputDivs login">
+     <div className="inputDivs">
      <FontAwesomeIcon className="icons" icon={faEnvelope} />
      <input type="email" name="email" placeholder="Email Address" />
      </div>

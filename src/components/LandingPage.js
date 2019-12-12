@@ -38,7 +38,6 @@ export default class LandingPage extends React.Component {
           <div className="landingpage-rightflex">
           </div>
         </div>
-        <div className="landingpage-overlay"></div>
       </div>
     );
   }
