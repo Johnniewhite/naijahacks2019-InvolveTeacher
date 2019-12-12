@@ -2,9 +2,9 @@ import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faEnvelope, faLock, faUserAlt } from '@fortawesome/free-solid-svg-icons';
 import axios from 'axios';
+import { connect } from 'react-redux';
 
-
-export default class SignupPage extends React.Component {
+class SignupPage extends React.Component {
 
   constructor (props) {
       super(props)
@@ -21,14 +21,35 @@ export default class SignupPage extends React.Component {
       }
   }
 
+
   submitForm (e) {
-    // const response = await axios.post(
-    //   'https://api.involveteacher.space/public/api/register',
-    //   { example: 'data' },
-    //   { headers: { 'Content-Type': 'application/json' } }
-    // )
-    // console.log(response.data)
+     e.preventDefault();
+
+     axios({
+      method: 'post',
+      url: 'https://api.involveteacher.space/public/api/v1/register',
+      data: {
+        name: this.state.name,
+        email: this.state.email,
+        password: this.state.password
+      }
+    }).then((response) => {
+      console.log(response);
+      if (response) {
+        alert(response.data.message)
+        this.props.history.push("./dashboard");
+        
+      }
+      else {
+        alert(response.data.message)
+      }
+    }, (error) => {
+      console.log("error", error);
+    });
+
+    
   }
+   
 
   nameChange (e) {
     const name = e.target.value;
@@ -80,3 +101,12 @@ export default class SignupPage extends React.Component {
     );
   };
 };
+
+
+const mapStateToProps = state => {
+  return {
+    courses: state.courses
+  };
+};
+
+export default connect(mapStateToProps)(SignupPage);

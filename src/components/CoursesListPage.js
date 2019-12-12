@@ -8,44 +8,31 @@ class CoursesListPage extends React.Component {
     super(props);
 
     this.state = {
-      users: []
+      courses: []
     };
   }
 
-  componentDidMount() {
-    axios.get(`https://api.involveteacher.space/public/api/v1/subjects`)
-      .then(res => {
-        const users = res.data;
-        this.setState({ users });
-        {
-          this.state.users.map((course) => {
-              this.props.dispatch(addCourses(course.subject_name))
-          })
-       }
-       console.log(this.state.users)
-      })
-  }
 
-  // componentDidMount() {
-  //   axios.get("https://api.involveteacher.space/public/api/v1/subjects")
-  //     .then(res => res.json())
-  //     .then(object => {
-  //       this.setState({ users: object.data });
-  //       {
-  //          this.state.users.map((course) => {
-  //              this.props.dispatch(addCourses(course.subject_name))
-  //          })
-  //       }
-  //       console.log(this.state.users)
-  //     })
-  //     .catch(console.log);
-  // }
+  componentDidMount() {
+    axios.get('https://api.involveteacher.space/public/api/v1/subjects')
+  .then((response) => {
+    const courses = response.data.data;
+    this.setState(() => ({courses}));
+    this.props.dispatch(addCourses(courses))
+    console.log(courses)
+  });
+  }
   render() {
     return (
       <div>
         {
-            this.state.users.map((course) =>(
-                  <h1 key={course.id}>Course: {course.subject_name}</h1>
+            this.props.courses.map((course) => (
+              <div key={course.id}>
+              <hr />
+              <h1>{course.id}{course.subject_name}</h1>
+              <h2>{course.subject_id}</h2>
+              <hr />
+              </div>
             ))
         }
       </div>

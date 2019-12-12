@@ -1,12 +1,13 @@
 import React from "react";
 import ReactDom from "react-dom";
 import configuration from "./store/configuration";
-import MainRouter from "./MainRoute";
+import MainRouter, { history } from "./MainRoute";
 import "react-dates/lib/css/_datepicker.css";
 import "react-dates/initialize";
 import "./store/configuration";
 import { Provider } from "react-redux";
 import "./styles/styles.scss";
+
 
 //serviceWorkers
 

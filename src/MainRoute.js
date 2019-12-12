@@ -1,25 +1,30 @@
 import React from 'react'
-import { BrowserRouter, Switch, Route } from 'react-router-dom';
+import { createBrowserHistory } from 'history';
+import { Router, Route, Switch } from "react-router-dom";
 import CoursesListPage from "./components/CoursesListPage";
 import Dashboard from './components/Dashboard';
 import ErrorPage from './components/ErrorPage';
 import LandingPage from './components/LandingPage';
 import LoginPage from './components/LoginPage';
 import SignupPage from './components/SignupPage';
+import PrivateRoute from './PrivateRoute';
+import PublicRoute from './PublicRoute';
+
+export const history = createBrowserHistory();
 
 const MainRouter = () => (
-    <BrowserRouter>
+    <Router history = {history}>
     <div>
     <Switch>
     <Route path="/" component={ LandingPage }  exact={true} />
-    <Route path="/dashboard" component={ Dashboard }/>
-    <Route path="/signup" component={ SignupPage } />
+    <PrivateRoute path="/dashboard" component={ Dashboard }/>
+    <PublicRoute path="/signup" component={ SignupPage } />
     <Route path="/login" component={ LoginPage } />
-    <Route path="/courses" component={ CoursesListPage } />
-    <Route component={ ErrorPage } />
+    <PrivateRoute path="/courses" component={ CoursesListPage } />
+    <PublicRoute component={ ErrorPage } />
     </Switch>
     </div>
-    </BrowserRouter>
+    </Router>
 );
 
 export default MainRouter
