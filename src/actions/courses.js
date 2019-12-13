@@ -22,4 +22,13 @@ export const subTopicsList = (subTopics = []) => {
     }
 }
 
+export const courseList = (courses = []) => {
+    return {
+        type: "COURSESLIST",
+       courses
+    }
+}
+
+
+
 

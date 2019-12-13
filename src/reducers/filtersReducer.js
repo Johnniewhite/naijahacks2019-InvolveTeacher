@@ -1,12 +1,13 @@
 
 const initialState = {
-  course: ""
-};
+  title: ""
+}
+
 
 export default (state = initialState, action) => {
   switch (action.type) {
-    case "SEARCH_COURSE":
-      return { ...state, title: action.course };
+    case "TEXT":
+      return {...state, title:action.text}
 
     default:
       return state;

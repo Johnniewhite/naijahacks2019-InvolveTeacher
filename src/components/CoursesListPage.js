@@ -3,13 +3,16 @@ import { addCourses }  from "../actions/courses";
 import { connect } from 'react-redux';
 import axios from 'axios';
 import { Link } from "react-router-dom";
+import filtering from "../actions/search";
+import { courseList } from "../actions/courses";
 
 class CoursesListPage extends React.Component {
   constructor(props) {
     super(props);
 
     this.state = {
-      courses: []
+      courses: [],
+      courseNames: []
     };
   }
 
@@ -18,20 +21,29 @@ class CoursesListPage extends React.Component {
     axios.get('https://api.involveteacher.space/public/api/v1/subjects')
   .then((response) => {
     const courses = response.data.data;
-    this.setState(() => ({courses}));
-    this.props.dispatch(addCourses(courses))
-    console.log(courses)
+    const courseNames = [];
+
+    for (var i = 0; i < courses.length; i++) {
+      courseNames.push(courses[i].subject_name)
+ }
+    
+   
+    this.setState(() => ({courses, courseNames}));
+    this.props.dispatch(addCourses(courses));
+    this.props.dispatch(courseList(courseNames));
+    console.log(courseNames)
   });
   }
   render() {
     return (
-      <div>
+
+      <div className="row main-container container-fluid">
         {
-            this.props.courses.map((course) => (
-              <div key={course.subject_id}>
-              <hr />
-              <Link to={`course/${course.subject_name}`}><h1>{course.subject_name}</h1> </Link>
-              <hr />
+            this.props.subjects.map((course) => (
+              <div key={course} className=" smaller-container">
+              
+              <Link className="text-container" to={`course/${course}`}><h2>{course}</h2> </Link>
+              
               </div>
             ))
         }
@@ -42,7 +54,8 @@ class CoursesListPage extends React.Component {
 
 const mapStateToProps = state => {
     return {
-      courses: state.courses
+      courses: state.courses,
+      subjects: filtering(state.subjectNames, state.filter)
     };
   };
   

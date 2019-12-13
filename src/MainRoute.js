@@ -22,7 +22,6 @@ const MainRouter = () => (
     <PrivateRoute path="/dashboard" component={ Dashboard }/>
     <PublicRoute path="/signup" component={ SignupPage } />
     <Route path="/login" component={ LoginPage } />
-    <PrivateRoute path="/courses" component={ CoursesListPage } />
     <PrivateRoute path="/course/:id" component={SubjectItem} />
     <PrivateRoute path="/:id" component={Subtopics} />
     <PublicRoute component={ ErrorPage } />

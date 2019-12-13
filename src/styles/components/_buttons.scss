@@ -5,11 +5,18 @@
   padding: $s-size;
   border: none;
   border-radius: 4px;
-  font-weight: 300;
+  font-weight: 400;
   text-decoration: none;
   display: inline-block;
   line-height: 1;
   text-align: center;
+}
+
+.button:hover{ 
+  text-decoration: none;
+  transform: scale(1.1);
+  transition: 0.2s ease-in-out;
+  color: whitesmoke;
 }
 
 .button--link {
@@ -30,4 +37,9 @@
   transition: 0.3s ease-in-out;
   background-color: $reddie;
   text-decoration: none;
+}
+
+.preset {
+  background-color: rgb(156, 149, 149);
+  padding: 2rem;
 }

@@ -10,15 +10,10 @@ import "./styles/styles.scss";
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 
-//serviceWorkers
-
-if (navigator.serviceWorker) {
-  window.addEventListener("load", () => {
-    navigator.serviceWorker
-      .register("../public/serviceWorker.js")
-      .then(reg => console.log("Service Workers"))
-      .catch(err => console.log(`Service Worker: Error: ${err}`));
-  });
+if('serviceWorker' in navigator) {
+  navigator.serviceWorker
+           .register('./')
+           .then(function() { console.log("Service Worker Registered"); });
 }
 
 const store = configuration();

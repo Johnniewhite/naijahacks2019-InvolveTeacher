@@ -1,8 +1,8 @@
 
-export const courseSearch = (course = "") => {
+export const search = ({text = ""} = {}) => {
     return {
-        type: "SEARCH_COURSE",
-        course
+        type: "TEXT",
+        text
     }
 }
 

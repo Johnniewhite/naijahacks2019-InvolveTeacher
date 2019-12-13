@@ -1,0 +1,81 @@
+// .power-house {
+    
+// }
+
+.header-icon {
+    margin-right: 1rem;
+
+}
+
+.header-button {
+    margin: 0.4rem;
+    margin-right: 4rem;
+    margin-left: 4rem;
+    border-radius: 2px;
+    font-size: 2rem;
+    background-color: rgb(126, 117, 117);
+}
+
+.header-button:hover {
+    color: honeydew;
+    transform: scale(1.1);
+}
+
+.header-line {
+    background-color: $d-blue;
+}
+
+.grey-color {
+    background-color: $off-white;
+    font-size: 2rem;
+    color: rgb(109, 104, 104);
+}
+
+.search {
+    border-radius: 3px;
+    padding: 0.5rem;
+    color: rgb(99, 95, 95);
+    font-weight: 400;
+    border: 2px solid rgb(209, 204, 204);
+    margin-top: 1rem;
+}
+
+.not-viewing {
+    color: $reddie;
+}
+
+.viewing {
+    color: $blue;
+    
+}
+
+
+.text-container {
+  color: rgb(99, 95, 95);
+  text-decoration: none;
+}
+
+.text-container:hover {
+    text-decoration: none;
+    color: whitesmoke;
+}
+
+.main-container {
+    margin: o auto;
+}
+
+.smaller-container {
+    border: 1px solid rgb(218, 214, 214) ;
+    margin: 1rem;
+    border-radius: 3px;
+    padding: 2rem;
+}
+
+.smaller-container:hover {
+    text-decoration: none;
+    transform: scale(1.1);
+    background-color: $blue;
+    transition: 0.4s ease-in-out;
+}
+
+

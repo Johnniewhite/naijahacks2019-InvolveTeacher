@@ -4,6 +4,8 @@ import authReducer from "../reducers/auth";
 import loggedinUserReducer from "../reducers/loggedinUserReducer";
 import topicData from "../reducers/topicData";
 import subtopicData from "../reducers/subtopicData";
+import filtersReducer from "../reducers/filtersReducer";
+import coursenames from "../reducers/coursenames";
 
 export default () => {
   const store = createStore(combineReducers({
@@ -11,7 +13,9 @@ export default () => {
       auth: authReducer,
       loggedInUsers: loggedinUserReducer,
       topicData: topicData,
-      subtopicData: subtopicData
+      subtopicData: subtopicData,
+      filter: filtersReducer,
+      subjectNames: coursenames
   }));
   return store;
 };
