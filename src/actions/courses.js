@@ -6,3 +6,20 @@ export const addCourses = (courses = []) => {
     }
 }
 
+
+export const topicsList = (topics = []) => {
+    return {
+        type: "TOPICS_ID",
+       topics
+    }
+}
+
+
+export const subTopicsList = (subTopics = []) => {
+    return {
+        type: "SUBTOPICS_ID",
+       subTopics
+    }
+}
+
+

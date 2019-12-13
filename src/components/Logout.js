@@ -24,7 +24,7 @@ class Logout extends React.Component {
    render () {
 
       return (
-       <Link className="button button__landingpage" to="/" onClick={this.signOut}>Sign Out</Link>
+       <Link className="button" to="/" onClick={this.signOut}>Sign Out</Link>
       )
    }
 }

@@ -9,6 +9,8 @@ import LoginPage from './components/LoginPage';
 import SignupPage from './components/SignupPage';
 import PrivateRoute from './PrivateRoute';
 import PublicRoute from './PublicRoute';
+import SubjectItem from './components/SubjectItem';
+import Subtopics from './components/Subtopics';
 
 export const history = createBrowserHistory();
 
@@ -21,6 +23,8 @@ const MainRouter = () => (
     <PublicRoute path="/signup" component={ SignupPage } />
     <Route path="/login" component={ LoginPage } />
     <PrivateRoute path="/courses" component={ CoursesListPage } />
+    <PrivateRoute path="/course/:id" component={SubjectItem} />
+    <PrivateRoute path="/:id" component={Subtopics} />
     <PublicRoute component={ ErrorPage } />
     </Switch>
     </div>

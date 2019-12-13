@@ -2,6 +2,7 @@ import React from "react";
 import { addCourses }  from "../actions/courses";
 import { connect } from 'react-redux';
 import axios from 'axios';
+import { Link } from "react-router-dom";
 
 class CoursesListPage extends React.Component {
   constructor(props) {
@@ -27,10 +28,9 @@ class CoursesListPage extends React.Component {
       <div>
         {
             this.props.courses.map((course) => (
-              <div key={course.id}>
+              <div key={course.subject_id}>
               <hr />
-              <h1>{course.id}{course.subject_name}</h1>
-              <h2>{course.subject_id}</h2>
+              <Link to={`course/${course.subject_name}`}><h1>{course.subject_name}</h1> </Link>
               <hr />
               </div>
             ))

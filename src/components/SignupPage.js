@@ -34,11 +34,13 @@ class SignupPage extends React.Component {
         password: this.state.password
       }
     }).then((response) => {
-      console.log(response);
-      if (response) {
-        alert(response.data.message)
+      if (response.data.status === "success") {
+        console.log(response)
+        const auth = response.data.data.token;
+        const name = response.data.data.name;
+        localStorage.setItem('auth', auth);
+        localStorage.setItem('name', name);
         this.props.history.push("./dashboard");
-        
       }
       else {
         alert(response.data.message)

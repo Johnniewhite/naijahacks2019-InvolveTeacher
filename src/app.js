@@ -7,6 +7,7 @@ import "react-dates/initialize";
 import "./store/configuration";
 import { Provider } from "react-redux";
 import "./styles/styles.scss";
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 
 //serviceWorkers
