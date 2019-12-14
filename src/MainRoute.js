@@ -11,6 +11,7 @@ import PrivateRoute from './PrivateRoute';
 import PublicRoute from './PublicRoute';
 import SubjectItem from './components/SubjectItem';
 import Subtopics from './components/Subtopics';
+import Contentpage from './components/Contentpage';
 
 export const history = createBrowserHistory();
 
@@ -23,7 +24,8 @@ const MainRouter = () => (
     <PublicRoute path="/signup" component={ SignupPage } />
     <PublicRoute path="/login" component={ LoginPage } />
     <PrivateRoute path="/course/:id" component={SubjectItem} />
-    <PrivateRoute path="/:id" component={Subtopics} />
+    <PrivateRoute path="/subtopics/:id" component={Subtopics} />
+    <PrivateRoute path="/:ed" component={Contentpage} />
     <Route component={ ErrorPage } />
     </Switch>
     </div>

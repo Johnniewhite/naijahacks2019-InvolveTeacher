@@ -1,9 +1,11 @@
 import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faEnvelope, faUnlockAlt } from '@fortawesome/free-solid-svg-icons';
+import { faEnvelope, faUnlockAlt, faReplyAll } from '@fortawesome/free-solid-svg-icons';
 import axios from 'axios';
 import { connect } from 'react-redux';
 import { trackPromise } from "react-promise-tracker";
+import { Link } from "react-router-dom";
+
 
 
 
@@ -34,8 +36,10 @@ class LoginPage extends React.Component {
     this.setState(() => ({password}));
   }
 
+
   submitForm (e) {
     e.preventDefault()
+    
 
     trackPromise(
       axios.post('https://api.involveteacher.space/public/api/v1/login', {
@@ -64,8 +68,11 @@ class LoginPage extends React.Component {
 
   render () {
 
+    
+
     return (
      <div className="register-page container-fluid">
+     <Link to="./"><FontAwesomeIcon className="icons home-icon" icon={faReplyAll} /></Link>
      <h1 className="logo">Involve <span>Teacher</span></h1>
      <form  onSubmit={this.submitForm}>
      <div className="inputDivs">

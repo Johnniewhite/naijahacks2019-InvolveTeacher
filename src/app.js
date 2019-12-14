@@ -13,15 +13,15 @@ import { usePromiseTracker } from "react-promise-tracker";
 import Loader from 'react-loader-spinner';
 
 
-if ('serviceWorker' in navigator) {
-     window.addEventListener('load', () => {
-      navigator.serviceWorker.register('/service-worker.js').then(registration => {
-        console.log('SW registered: ', registration);
-      }).catch(registrationError => {
-        console.log('SW registration failed: ', registrationError);
-      });
-    });
-  }
+// if ('serviceWorker' in navigator) {
+//      window.addEventListener('load', () => {
+//       navigator.serviceWorker.register('/service-worker.js').then(registration => {
+//         console.log('SW registered: ', registration);
+//       }).catch(registrationError => {
+//         console.log('SW registration failed: ', registrationError);
+//       });
+//     });
+//   }
 
 const LoadingIndicator = props => {
   const { promiseInProgress } = usePromiseTracker();

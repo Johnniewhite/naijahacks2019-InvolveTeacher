@@ -63,7 +63,7 @@ class SubjectItem extends React.Component {
       </div>
       <div>
       {
-       (this.props.topicsData.length === this.props.topics.length)? <h2 className="viewing">Viewing {this.props.topicsData.length} subjects</h2> : <h2 className="not-viewing">Not viewing {this.props.topicsData.length- this.props.topics.length} subjects of {this.props.topicsData.length} subjects due to filters</h2>
+       (this.props.topicsData.length === this.props.topics.length)? <h2 className="viewing">Viewing {this.props.topicsData.length} topic/topics</h2> : <h2 className="not-viewing">Not viewing {this.props.topicsData.length- this.props.topics.length} subjects of {this.props.topicsData.length} subjects due to filters</h2>
       }
      
       </div>
@@ -74,7 +74,7 @@ class SubjectItem extends React.Component {
       {
         this.state.topics.map(topic=>(
           <div key={topic.topic_name,topic.topic_id} className="smaller-container">
-          <Link className="text-container" to={`/${topic.topic_id}`}>
+          <Link className="text-container" to={`/subtopics/${topic.topic_id}`}>
           <h3 >{topic.topic_name}</h3>
           </Link>
           </div>

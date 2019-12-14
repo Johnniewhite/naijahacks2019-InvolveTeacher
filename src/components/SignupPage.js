@@ -1,9 +1,10 @@
 import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faEnvelope, faLock, faUserAlt } from '@fortawesome/free-solid-svg-icons';
+import { faEnvelope, faLock, faReplyAll, faUserAlt } from '@fortawesome/free-solid-svg-icons';
 import axios from 'axios';
 import { connect } from 'react-redux';
 import { trackPromise } from "react-promise-tracker";
+import { Link } from "react-router-dom";
 
 class SignupPage extends React.Component {
 
@@ -79,6 +80,8 @@ class SignupPage extends React.Component {
     return (
       
      <div className="register-page container-fluid">
+     <Link to="./"><FontAwesomeIcon className="icons home-icon" icon={faReplyAll} /></Link>
+     
      <h1 className="logo">Involve <span>Teacher</span></h1>
      <h1>REGISTER AS A TEACHER</h1>
      <form onSubmit={this.submitForm}>

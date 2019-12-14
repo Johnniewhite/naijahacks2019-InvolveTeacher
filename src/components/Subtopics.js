@@ -62,7 +62,7 @@ class Subtopics extends React.Component {
       </div>
       <div>
       {
-       (this.props.topicData.length === this.props.topic.length)? <h2 className="viewing">Viewing {this.props.topic.length} subjects</h2> : <h2 className="not-viewing">Not viewing {this.props.topicData.length- this.props.topic.length} subjects of {this.props.topicData.length} subjects due to filters</h2>
+       (this.props.topicData.length === this.props.topic.length)? <h2 className="viewing">Viewing {this.props.topic.length} subtopics</h2> : <h2 className="not-viewing">Not viewing {this.props.topicData.length- this.props.topic.length} subjects of {this.props.topicData.length} subjects due to filters</h2>
       }
      
       </div>
@@ -72,7 +72,7 @@ class Subtopics extends React.Component {
       {
         this.state.subTopics.map(subtopic=>(
           <div className="smaller-container" key={subtopic.unit_name + subtopic.unit_id}>
-          <Link className="text-container" to={`/${subtopic.unit_id}`}>
+          <Link className="text-container" to={`/${subtopic.unit_name}`}>
           <h3>{subtopic.unit_name}</h3>
           </Link>
           </div>
