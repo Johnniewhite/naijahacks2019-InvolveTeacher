@@ -48,7 +48,7 @@ export default class ContentPage extends React.Component {
         <div className="col-12 iframe">
           <Iframe
             className="m-auto"
-            url={`http://www.youtube.com/embed/${this.state.todo}`}
+            url={`https://www.youtube.com/embed/${this.state.todo}`}
             height="450px"
             width="500px"
             id="myId"
