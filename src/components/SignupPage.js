@@ -3,6 +3,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faEnvelope, faLock, faUserAlt } from '@fortawesome/free-solid-svg-icons';
 import axios from 'axios';
 import { connect } from 'react-redux';
+import { trackPromise } from "react-promise-tracker";
 
 class SignupPage extends React.Component {
 
@@ -23,32 +24,34 @@ class SignupPage extends React.Component {
 
 
   submitForm (e) {
-     e.preventDefault();
+  
+     e.preventDefault()
+     
+        axios({
+          method: 'post',
+          url: 'https://api.involveteacher.space/public/api/v1/register',
+          data: {
+            name: this.state.name,
+            email: this.state.email,
+            password: this.state.password
+          }
+        }).then((response) => {
+          if (response.data.status === "success") {
+            console.log(response)
+            const auth = response.data.data.token;
+            const name = response.data.data.name;
+            localStorage.setItem('auth', auth);
+            localStorage.setItem('name', name);
+            this.props.history.push("./dashboard");
+          }
+          else {
+            alert(response.data.message)
+          }
+        }, (error) => {
+          console.log("error", error);
+        })
 
-     axios({
-      method: 'post',
-      url: 'https://api.involveteacher.space/public/api/v1/register',
-      data: {
-        name: this.state.name,
-        email: this.state.email,
-        password: this.state.password
-      }
-    }).then((response) => {
-      if (response.data.status === "success") {
-        console.log(response)
-        const auth = response.data.data.token;
-        const name = response.data.data.name;
-        localStorage.setItem('auth', auth);
-        localStorage.setItem('name', name);
-        this.props.history.push("./dashboard");
-      }
-      else {
-        alert(response.data.message)
-      }
-    }, (error) => {
-      console.log("error", error);
-    });
-
+     
     
   }
    
@@ -75,7 +78,7 @@ class SignupPage extends React.Component {
 
     return (
       
-     <div className="register-page">
+     <div className="register-page container-fluid">
      <h1 className="logo">Involve <span>Teacher</span></h1>
      <h1>REGISTER AS A TEACHER</h1>
      <form onSubmit={this.submitForm}>

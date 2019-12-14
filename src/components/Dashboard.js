@@ -5,6 +5,7 @@ import { connect } from "react-redux";
 import CoursesListPage from './CoursesListPage';
 import SearchBox from "./SearchBox";
 import filtering from "../actions/search";
+import Loader from 'react-loader-spinner'
 
 class Dashboard extends React.Component {
 

@@ -5,6 +5,7 @@ import axios from 'axios';
 import { Link } from "react-router-dom";
 import filtering from "../actions/search";
 import { courseList } from "../actions/courses";
+import { trackPromise } from "react-promise-tracker";
 
 class CoursesListPage extends React.Component {
   constructor(props) {
@@ -18,21 +19,23 @@ class CoursesListPage extends React.Component {
 
 
   componentDidMount() {
-    axios.get('https://api.involveteacher.space/public/api/v1/subjects')
-  .then((response) => {
-    const courses = response.data.data;
-    const courseNames = [];
-
-    for (var i = 0; i < courses.length; i++) {
-      courseNames.push(courses[i].subject_name)
- }
+    trackPromise(
+      axios.get('https://api.involveteacher.space/public/api/v1/subjects')
+      .then((response) => {
+        const courses = response.data.data;
+        const courseNames = [];
     
-   
-    this.setState(() => ({courses, courseNames}));
-    this.props.dispatch(addCourses(courses));
-    this.props.dispatch(courseList(courseNames));
-    console.log(courseNames)
-  });
+        for (var i = 0; i < courses.length; i++) {
+          courseNames.push(courses[i].subject_name)
+     }
+        
+       
+        this.setState(() => ({courses, courseNames}));
+        this.props.dispatch(addCourses(courses));
+        this.props.dispatch(courseList(courseNames));
+        console.log(courseNames)
+      })
+    )
   }
   render() {
     return (

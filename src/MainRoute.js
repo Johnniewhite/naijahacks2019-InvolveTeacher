@@ -18,13 +18,13 @@ const MainRouter = () => (
     <Router history = {history}>
     <div>
     <Switch>
-    <Route path="/" component={ LandingPage }  exact={true} />
+    <PublicRoute path="/" component={ LandingPage }  exact={true} />
     <PrivateRoute path="/dashboard" component={ Dashboard }/>
     <PublicRoute path="/signup" component={ SignupPage } />
-    <Route path="/login" component={ LoginPage } />
+    <PublicRoute path="/login" component={ LoginPage } />
     <PrivateRoute path="/course/:id" component={SubjectItem} />
     <PrivateRoute path="/:id" component={Subtopics} />
-    <PublicRoute component={ ErrorPage } />
+    <Route component={ ErrorPage } />
     </Switch>
     </div>
     </Router>

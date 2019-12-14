@@ -5,9 +5,9 @@ import { Link } from "react-router-dom";
 export default class LandingPage extends React.Component {
   render() {
     return (
-      <div>
-        <div className="landing-page">
-          <div className="landingpage-leftflex">
+      <div className="container-fluid">
+        <div className="landing-page d-flex justify-content-between">
+          <div className="landingpage-leftflex d-flex flex-column justify-content-around m-5">
             <h1 className="logo">
               Involve <span>Teacher</span>
             </h1>
@@ -35,7 +35,7 @@ export default class LandingPage extends React.Component {
               </Link>
             </div>
           </div>
-          <div className="landingpage-rightflex">
+          <div className="landingpage-rightflex col-6">
           </div>
         </div>
       </div>

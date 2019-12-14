@@ -3,8 +3,8 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faEnvelope, faUnlockAlt } from '@fortawesome/free-solid-svg-icons';
 import axios from 'axios';
 import { connect } from 'react-redux';
-import { login } from '../actions/auth';
-import { Route, Redirect } from "react-router-dom";
+import { trackPromise } from "react-promise-tracker";
+
 
 
 class LoginPage extends React.Component {
@@ -37,32 +37,35 @@ class LoginPage extends React.Component {
   submitForm (e) {
     e.preventDefault()
 
-    axios.post('https://api.involveteacher.space/public/api/v1/login', {
-            email: this.state.email,
-            password: this.state.password
-        })
-        .then((response)=>{
-         if (response.data.status === "success") {
-           const auth = response.data.data.auth.token;
-           const name = response.data.data.name;
-           localStorage.setItem('auth', auth);
-           localStorage.setItem('name', name);
-           this.props.history.push("./dashboard");
-           console.log(response)
-         }
-         else {
-           alert(response.data.message)
-         }
-        })
-        .catch((error)=>{
-            console.log(error);
-        })
+    trackPromise(
+      axios.post('https://api.involveteacher.space/public/api/v1/login', {
+        email: this.state.email,
+        password: this.state.password
+    })
+    .then((response)=>{
+     if (response.data.status === "success") {
+       const auth = response.data.data.auth.token;
+       const name = response.data.data.name;
+       localStorage.setItem('auth', auth);
+       localStorage.setItem('name', name);
+       this.props.history.push("./dashboard");
+       console.log(response)
+     }
+     else {
+       alert(response.data.message)
+     }
+    })
+    .catch((error)=>{
+        console.log(error);
+    })
+    )
+    
   }
 
   render () {
 
     return (
-     <div className="register-page">
+     <div className="register-page container-fluid">
      <h1 className="logo">Involve <span>Teacher</span></h1>
      <form  onSubmit={this.submitForm}>
      <div className="inputDivs">
@@ -74,7 +77,7 @@ class LoginPage extends React.Component {
      <FontAwesomeIcon className="icons" icon={faUnlockAlt} />
      <input type="password" name="email" placeholder="Password" onChange={this.passwordChange}/>
      </div>
-     <button className="button  signup-button">Login</button>
+     <input type="submit" className="button  signup-button" value="Log in"/>
      </form>
      </div>
     );

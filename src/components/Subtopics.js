@@ -4,7 +4,9 @@ import axios from "axios";
 import { Link } from "react-router-dom";
 import subtopicData from "../reducers/subtopicData";
 import { subTopicsList } from "../actions/courses";
-
+import SearchBox from "./SearchBox";
+import filtering from "../actions/search";
+import { trackPromise } from "react-promise-tracker";
 class Subtopics extends React.Component {
   constructor(props) {
     super(props);
@@ -19,6 +21,7 @@ class Subtopics extends React.Component {
     const subject = this.props.match.params.id
 
     console.log(subject)
+   trackPromise (
     axios.post('https://api.involveteacher.space/public/api/v1/units', {
       topic_id: subject
      })
@@ -34,13 +37,15 @@ class Subtopics extends React.Component {
    }
 
    this.setState(() => ({subTopic_ids, subTopic_names, subTopics}))
-   this.props.dispatch(subTopicsList(this.state.subTopics))
-          console.log(this.props.subtopicData)
+   this.props.dispatch(subTopicsList(subTopics_names))
+          console.log(this.state.subTopic_ids)
        
      }, (error) => {
        console.log(error);
-     });
+     })
 
+   )
+    
   }
 
 
@@ -48,18 +53,37 @@ class Subtopics extends React.Component {
   render () {
 
     return (
+
+      <div className="container-fluid grey-color">
+      <div className="jumbotron">
+      <div className="container-fluid d-flex justify-content-between">
+      <div>
+      <SearchBox />
+      </div>
       <div>
       {
+       (this.props.topicData.length === this.props.topic.length)? <h2 className="viewing">Viewing {this.props.topic.length} subjects</h2> : <h2 className="not-viewing">Not viewing {this.props.topicData.length- this.props.topic.length} subjects of {this.props.topicData.length} subjects due to filters</h2>
+      }
+     
+      </div>
+      </div>
+      </div>
+      <div className="main-container row container-fluid">
+      {
         this.state.subTopics.map(subtopic=>(
-          <div key={subtopic.unit_name + subtopic.unit_id}>
-          <Link to={`/${subtopic.unit_id}`}>
-          <h1>{subtopic.unit_name}</h1>
+          <div className="smaller-container" key={subtopic.unit_name + subtopic.unit_id}>
+          <Link className="text-container" to={`/${subtopic.unit_id}`}>
+          <h3>{subtopic.unit_name}</h3>
           </Link>
           </div>
         ))
       }
       
     </div>
+  
+</div>
+
+     
     )
   }
 }
@@ -68,65 +92,10 @@ class Subtopics extends React.Component {
 const mapStateToProps = state => {
   return {
     courses: state.courses,
-    topics: state.topicData,
-    subtopicData: state.subtopicData
+    topicsData: state.topicData,
+    topicData: state.subtopicData,
+    topic: filtering(state.subtopicData, state.filter)
   };
 };
-
 export default connect(mapStateToProps)(Subtopics);
 
-
-
-// import React from "react";
-// import { connect } from "react-redux";
-// import axios from "axios";
-// import { Link } from "react-router-dom";
-
-// class Subtopics extends React.Component {
-//   constructor(props) {
-//     super(props);
-//     this.view = this.view.bind(this);
-
-//     this.state = {
-//       topic_names: [],
-//       topic_ids: [],
-//       topics: []
-//     };
-//   }
-//   view(e) {
-//     e.preventDefault();
-  
-//     const subject = this.props.match.params.id
-
-//     const filtered = this.props.courses.filter((course) => course.subject_name === subject);
-//     const id = filtered[0].id
-//     axios.post('https://api.involveteacher.space/public/api/v1/units', {
-//       topic_id: id
-//      })
-//      .then((response) => {
-       
-              
-//        console.log(response)
-       
-//      }, (error) => {
-//        console.log(error);
-//      });
-// }
-
-
-
-//   render() {
-//     return <div>
-//     <h1>Welcome</h1>
-//     </div>;
-//   }
-// }
-
-// const mapStateToProps = state => {
-//   return {
-//     courses: state.courses,
-//     topics: state.topicData
-//   };
-// };
-
-// export default connect(mapStateToProps)(Subtopics);
